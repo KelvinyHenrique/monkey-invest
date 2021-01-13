@@ -18,17 +18,22 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "@typegoose/typegoose": "^6.4.0"
   },
   "dependencies": {
     "@nestjs/common": "^7.5.1",
+    "@nestjs/config": "^0.6.1",
     "@nestjs/core": "^7.5.1",
     "@nestjs/mongoose": "^7.2.1",
     "@nestjs/platform-express": "^7.5.1",
+    "class-validator": "^0.13.0",
+    "moment": "^2.29.1",
     "mongoose": "^5.11.11",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^6.6.3"
+    "rxjs": "^6.6.3",
+    "typegoose": "^5.9.1"
   },
   "devDependencies": {
     "@nestjs/cli": "^7.5.1",
