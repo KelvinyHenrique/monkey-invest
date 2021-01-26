@@ -27,13 +27,13 @@ export class Stocks {
   public status: boolean;
 }
 
-const StocksModel = getModelForClass(Stocks);
+const StockModel = getModelForClass(Stocks);
 
-const StocksSchema = buildSchema(Stocks, { versionKey: false });
+const StockSchema = buildSchema(Stocks, { versionKey: false });
 
 export const StocksFeatureProvider = {
-  name: 'Stocks',
+  name: 'Stock',
   collection: 'Stocks',
-  model: StocksModel,
-  schema: StocksSchema,
+  model: StockModel,
+  schema: StockSchema,
 };

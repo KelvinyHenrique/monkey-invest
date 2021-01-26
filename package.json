@@ -34,6 +34,7 @@
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.6.3",
+    "tslint": "^6.1.3",
     "typegoose": "^5.9.1"
   },
   "devDependencies": {
