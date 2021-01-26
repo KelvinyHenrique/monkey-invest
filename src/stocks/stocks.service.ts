@@ -11,6 +11,8 @@ import { map } from 'rxjs/operators';
 import { InjectModel } from '@nestjs/mongoose';
 import { ReturnModelType } from '@typegoose/typegoose';
 import { Stocks, StocksFeatureProvider } from './schemas/stocks.schema';
+import { StockUserDto } from './dto/create-user.dto';
+
 @Injectable()
 export class StocksService {
   constructor(
@@ -24,7 +26,7 @@ export class StocksService {
     return stocks;
   }
 
-  public async create(stockUserDto: StockUserDto): any {
+  public async create(stockUserDto: StockUserDto) {
     const created = new this.stockModel(stockUserDto);
     return created.save();
   }
