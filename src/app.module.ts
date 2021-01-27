@@ -1,3 +1,4 @@
+import { UsersModule } from './users/users.module';
 import { HttpModule, Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
@@ -10,6 +11,8 @@ import { StocksModule } from './stocks/stocks.module';
 
 @Module({
   imports: [
+    UsersModule,
+    StocksModule,
     ConfigModule.forRoot({
       load: [configuration],
       isGlobal: true,
@@ -18,7 +21,6 @@ import { StocksModule } from './stocks/stocks.module';
       timeout: 5000,
       maxRedirects: 5,
     }),
-    StocksModule,
     MongooseModule.forRootAsync({
       imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => ({
@@ -28,7 +30,7 @@ import { StocksModule } from './stocks/stocks.module';
       inject: [ConfigService],
     }),
   ],
-  controllers: [AppController, UsersController, AuthController],
+  controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }

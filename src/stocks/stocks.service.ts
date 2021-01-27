@@ -2,17 +2,15 @@ import {
     HttpException,
     HttpService,
     HttpStatus,
-    Injectable,
+    Injectable
 } from '@nestjs/common';
-import { Stock } from './interfaces/stock.interface';
+import { InjectModel } from '@nestjs/mongoose';
+import { ReturnModelType } from '@typegoose/typegoose';
 import { AxiosResponse } from 'axios';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { InjectModel } from '@nestjs/mongoose';
-import { ReturnModelType } from '@typegoose/typegoose';
+import { CreateStockUserDto, UpdateStockUserDto } from './dto';
 import { Stocks, StocksFeatureProvider } from './schemas/stocks.schema';
-import { StockUserDto } from './dto/create-stock-user.dto';
-import { UpdateStockUserDto } from './dto/update-stock-user';
 
 @Injectable()
 export class StocksService {
@@ -27,7 +25,7 @@ export class StocksService {
     }
 
     // CREATE
-    public async create(stockUserDto: StockUserDto) {
+    public async create(stockUserDto: CreateStockUserDto) {
         const created = new this.stocksModel(stockUserDto);
         return created.save();
     }

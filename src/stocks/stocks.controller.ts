@@ -1,7 +1,5 @@
-import { Body, Controller, Delete, Get, Post, Put, Req } from '@nestjs/common';
-import { Request } from 'express';
-import { StockDto } from './dto/Stock.dto';
-import { UpdateStockUserDto } from './dto/update-stock-user';
+import { Body, Controller, Delete, Get, Post, Put } from '@nestjs/common';
+import { CreateStockUserDto, UpdateStockUserDto } from './dto';
 import { StocksService } from './stocks.service';
 
 @Controller('stocks')
@@ -13,7 +11,7 @@ export class StocksController {
   }
 
   @Post()
-  async create(@Body() stockDto: StockDto):Promise<any> {
+  async create(@Body() stockDto: CreateStockUserDto):Promise<any> {
     return this.stocksService.create(stockDto);
   }
 

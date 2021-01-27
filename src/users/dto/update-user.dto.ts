@@ -1,0 +1,28 @@
+import { IsBoolean, IsDate, IsOptional, IsString } from 'class-validator';
+
+export class UpdateUserDTO {
+  @IsString()
+  id: string;
+
+  @IsString()
+  name: string
+
+  // TODO: Verificar com Kelviny se vai ser username ou email
+  @IsString()
+  username: string
+
+  @IsString()
+  password: string
+
+  @IsBoolean()
+  @IsOptional()
+  active?: boolean
+
+  @IsDate()
+  @IsOptional()
+  createAt?: Date
+
+  @IsString()
+  @IsOptional()
+  telephone?: string
+}
