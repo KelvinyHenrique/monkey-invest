@@ -1,13 +1,12 @@
-import { UsersModule } from './users/users.module';
 import { HttpModule, Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
-import configuration from './config/configuration';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UsersController } from './users/users.controller';
-import { AuthController } from './auth/auth.controller';
+import { AuthModule } from './auth/auth.module';
+import configuration from './config/configuration';
 import { StocksModule } from './stocks/stocks.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -29,6 +28,7 @@ import { StocksModule } from './stocks/stocks.module';
       }),
       inject: [ConfigService],
     }),
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
