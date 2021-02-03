@@ -4,7 +4,6 @@ export class CreateUserDTO {
   @IsString()
   name: string
 
-  // TODO: Verificar com Kelviny se vai ser username ou email
   @IsString()
   username: string
 

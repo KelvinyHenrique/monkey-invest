@@ -4,26 +4,31 @@ import { UsersService } from './users.service';
 
 @Controller('users')
 export class UsersController {
-    constructor(private readonly usersService: UsersService) { }
-    
-    @Get()
-    findAll() {
-        return this.usersService.findAll();
-    }
+  constructor(private readonly usersService: UsersService) { }
 
-    @Post()
-    async create(@Body() stockDto: CreateUserDTO):Promise<any> {
-      return this.usersService.create(stockDto);
-    }
-  
-    @Delete()
-    async delete(@Body("id") id: string) {
-      return this.usersService.delete(id);
-    }
-    
-    @Put()
-    async update(@Body() stockDto: UpdateUserDTO) {
-      return this.usersService.update(stockDto);
-    }
+  @Get()
+  findOne(@Body('username') username: string) {
+    return this.usersService.findOne(username);
+  }
+
+  @Get()
+  findAll() {
+    return this.usersService.findAll();
+  }
+
+  @Post()
+  async create(@Body() stockDto: CreateUserDTO): Promise<any> {
+    return this.usersService.create(stockDto);
+  }
+
+  @Delete()
+  async delete(@Body('id') id: string) {
+    return this.usersService.delete(id);
+  }
+
+  @Put()
+  async update(@Body() stockDto: UpdateUserDTO) {
+    return this.usersService.update(stockDto);
+  }
 
 }

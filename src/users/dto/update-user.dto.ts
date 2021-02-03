@@ -7,7 +7,6 @@ export class UpdateUserDTO {
   @IsString()
   name: string
 
-  // TODO: Verificar com Kelviny se vai ser username ou email
   @IsString()
   username: string
 

@@ -5,6 +5,6 @@ export class CreateStockUserDto {
   value: number;
   buyDate?: Date;
   sellDate?: Date;
-  userID: string;
+  userID?: string;
   status?: boolean;
 }

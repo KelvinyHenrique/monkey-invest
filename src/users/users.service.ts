@@ -16,9 +16,14 @@ export class UsersService {
         return this.usersModel.find().exec();
     }
 
+    public async findOne(username: string) {
+        return this.usersModel.findOne({ username }).exec();
+    }
+
     // CREATE
     public async create(userUserDto: CreateUserDTO) {
         const created = new this.usersModel(userUserDto);
+        // COMENTARIO! 
         return created.save();
     }
 
