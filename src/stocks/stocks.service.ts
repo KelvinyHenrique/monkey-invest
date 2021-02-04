@@ -20,8 +20,12 @@ export class StocksService {
     ) { }
 
     // READ
-    public async findAll() {
-        return this.stocksModel.find().exec();
+    public async findAll(user: string) {
+        return await this.stocksModel.find({userID: user}).exec();
+    }
+
+    public async findOne(id: string, user: string) {
+        return this.stocksModel.findOne({_id: id, userID: user}).exec();
     }
 
     // CREATE

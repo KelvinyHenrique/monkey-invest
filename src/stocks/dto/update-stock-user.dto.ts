@@ -4,6 +4,7 @@ export class UpdateStockUserDto {
   id: string;
   symbol: string;
   value: number;
+  quantity?: number;
   buyDate?: Date;
   sellDate?: Date;
   userID: string;

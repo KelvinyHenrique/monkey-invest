@@ -14,6 +14,9 @@ export class Stocks {
   @prop({ required: true })
   public value: number;
 
+  @prop({ required: false, default: () => 1 })
+  public quantity: number;
+
   @prop({ required: false, default: () => moment.utc().toDate() })
   public buyDate: Date;
 

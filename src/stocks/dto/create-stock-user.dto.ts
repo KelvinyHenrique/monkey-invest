@@ -3,6 +3,7 @@ import { IsBoolean, IsDate, IsEmail, IsEnum, IsOptional, IsString } from 'class-
 export class CreateStockUserDto {
   symbol: string;
   value: number;
+  quantity?: number;
   buyDate?: Date;
   sellDate?: Date;
   userID?: string;
