@@ -8,7 +8,7 @@ export class UsersController {
   constructor(private readonly usersService: UsersService) { }
 
   @UseGuards(JwtAuthGuard)
-  @Get()
+  @Get(':username')
   findOne(@Body('username') username: string) {
     return this.usersService.findOne(username);
   }

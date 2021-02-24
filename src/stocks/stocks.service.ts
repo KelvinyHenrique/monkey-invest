@@ -29,8 +29,8 @@ export class StocksService {
     }
 
     // CREATE
-    public async create(stockUserDto: CreateStockUserDto) {
-        // TODO: userID: string === req.user
+    public async create(stockUserDto: CreateStockUserDto, user: string) {
+        stockUserDto.userID = user;
         const created = new this.stocksModel(stockUserDto);
         return created.save();
     }

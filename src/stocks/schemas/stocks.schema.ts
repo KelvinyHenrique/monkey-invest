@@ -16,15 +16,15 @@ export class Stocks {
 
   @prop({ required: false, default: () => 1 })
   public quantity: number;
+  
+  @prop({ required: true })
+  public userID: ObjectId;
 
   @prop({ required: false, default: () => moment.utc().toDate() })
   public buyDate: Date;
 
   @prop({ required: false })
   public sellDate: Date;
-
-  @prop({ required: true })
-  public userID: ObjectId;
 
   @prop({ required: false, default: () => true })
   public status: boolean;
